@@ -59,6 +59,14 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
         return null;
 
     }
+    public int leftIndex(T p) {
+        int index = (int) p;
+        if(index <= array.length && 2 * index <= array.length ){
+            return 2 * index;
+        }
+        return -1;
+
+    }
 
     @Override
     public T right(T p) {
@@ -67,6 +75,14 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
             return (T) array[2 * index + 1];
         }
         return null;
+    }
+
+    public int rightIndex(T p) {
+        int index = (int) p;
+        if(index <= array.length && 2 * index + 1 <= array.length ){
+            return 2 * index + 1;
+        }
+        return -1;
     }
 
     @Override
