@@ -1,0 +1,22 @@
+for ( int i = 0; i < hoten.length () ; i ++) {
+    if( i % 2 == 0) {
+        s.push ( hoten.charAt ( i ) ) ;
+}
+    if( i % 3 == 0) {
+        s.pop () ;
+    }
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Input name : chuquoctuan
+Number 1 :
+Number 2 :
+Number 3 : u
+Number 4 :
+Number 5 : u
+Number 6 : u
+Number 7 : u
+Number 8 : u
+Number 9 : u u
+Number 10 : u
+Result : u n
