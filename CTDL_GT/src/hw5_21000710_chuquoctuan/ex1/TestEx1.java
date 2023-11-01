@@ -49,23 +49,22 @@ public class TestEx1 {
         LinkedBinaryTree.Node<Integer> left = linkedBinaryTree.addLeft(root ,10);
         LinkedBinaryTree.Node<Integer> right = linkedBinaryTree.addRight(root ,20);
 
-//        System.out.println("Element root : " + linkedBinaryTree.root().element);
-//        System.out.println("Element right of root : " + linkedBinaryTree.right(root).element);
-//        System.out.println("Size tree : " + linkedBinaryTree.size());
+        System.out.println("Element root : " + linkedBinaryTree.root().element);
+        System.out.println("Element right of root : " + linkedBinaryTree.right(root).element);
+        System.out.println("Size tree : " + linkedBinaryTree.size());
 
         linkedBinaryTree.addRight(right ,30);
 
-//        System.out.println("Element right of right : " + linkedBinaryTree.right(right).element);
-//        System.out.println("Number children of root : " + linkedBinaryTree.numChildren(root));
-//        System.out.println("Number children of right : " + linkedBinaryTree.numChildren(right));
-//        System.out.println("Number sibling of left : " + linkedBinaryTree.sibling(left).element);
-//        exportDataToFile("Binary tree use linked list : ");
+        System.out.println("Element right of right : " + linkedBinaryTree.right(right).element);
+        System.out.println("Number children of root : " + linkedBinaryTree.numChildren(root));
+        System.out.println("Number children of right : " + linkedBinaryTree.numChildren(right));
+        System.out.println("Number sibling of left : " + linkedBinaryTree.sibling(left).element);
+        exportDataToFile("Binary tree use linked list : ");
 
         linkedListTree(linkedBinaryTree, linkedBinaryTree.root(), "");
 
-
     }
-    // 1.c : in order
+    // 1.c : in order is l -> node -> right
     public static void linkedListTree(LinkedBinaryTree<Integer, LinkedBinaryTree.Node<Integer>> linkedTree, LinkedBinaryTree.Node<Integer> node, String space){
         if (node == null) return;
 
@@ -83,12 +82,12 @@ public class TestEx1 {
             return;
         }
 
-        arrayTree(arrayTree, arrayTree.leftIndex(node), space + "  ");
+        arrayTree(arrayTree, arrayTree.left(node), space + "  ");
 
         String data = space + String.valueOf(node);
         exportDataToFile(data);
 
-        arrayTree(arrayTree, arrayTree.rightIndex(node), space + "  ");
+        arrayTree(arrayTree, arrayTree.right(node), space + "  ");
     }
 
     public static void exportDataToFile(String data) {

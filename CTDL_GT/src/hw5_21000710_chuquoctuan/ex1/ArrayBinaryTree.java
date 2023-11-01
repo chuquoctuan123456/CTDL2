@@ -7,6 +7,7 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
     private int n = 0;
     private int defaultsize = 100;
 
+    // T : index , E : element
     public ArrayBinaryTree() {
         array = (E[]) new Object[defaultsize];
     }
@@ -53,7 +54,7 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
     @Override
     public T left(T p) {
         int index = (int) p;
-        if(index <= array.length && 2 * index <= array.length ){
+        if(2 * index <= array.length ){
             return (T) array[2 * index];
         }
         return null;
@@ -61,17 +62,17 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
     }
     public int leftIndex(T p) {
         int index = (int) p;
-        if(index <= array.length && 2 * index <= array.length ){
+        if(2 * index <= array.length ){
             return 2 * index;
         }
-        return -1;
+        return 0;
 
     }
 
     @Override
     public T right(T p) {
         int index = (int) p;
-        if(index <= array.length && 2 * index + 1 <= array.length ){
+        if(2 * index + 1 <= array.length ){
             return (T) array[2 * index + 1];
         }
         return null;
@@ -79,10 +80,10 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
 
     public int rightIndex(T p) {
         int index = (int) p;
-        if(index <= array.length && 2 * index + 1 <= array.length ){
+        if(2 * index + 1 <= array.length ){
             return 2 * index + 1;
         }
-        return -1;
+        return 0;
     }
 
     @Override

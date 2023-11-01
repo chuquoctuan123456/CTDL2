@@ -16,6 +16,38 @@ public class LinkedBinaryTree<E, T> {
             this.left = left;
             this.right = right;
         }
+
+        public E getElement() {
+            return element;
+        }
+
+        public void setElement(E element) {
+            this.element = element;
+        }
+
+        public Node<E> getParent() {
+            return parent;
+        }
+
+        public void setParent(Node<E> parent) {
+            this.parent = parent;
+        }
+
+        public Node<E> getLeft() {
+            return left;
+        }
+
+        public void setLeft(Node<E> left) {
+            this.left = left;
+        }
+
+        public Node<E> getRight() {
+            return right;
+        }
+
+        public void setRight(Node<E> right) {
+            this.right = right;
+        }
     }
 
     private Node<E> root;
@@ -52,32 +84,32 @@ public class LinkedBinaryTree<E, T> {
     }
 
 
-    public T parent(T p) {
+    public Node<E> parent(T p) {
         Node<E> node = (Node<E>) p;
         if(node == null || node.parent == null){
             return null;
         }
 
-        return (T) node.parent;
+        return node.parent;
     }
 
-    public T left(T p) {
+    public Node<E> left(T p) {
         Node<E> node = (Node<E>) p;
         if(node == null || node.left == null){
             return null;
         }
 
-        return (T) node.left;
+        return node.left;
     }
 
 
-    public T right(T p) {
+    public Node<E> right(T p) {
         Node<E> node = (Node<E>) p;
         if(node == null || node.right == null){
             return null;
         }
 
-        return (T) node.right;
+        return node.right;
     }
 
 

@@ -1,0 +1,28 @@
+Về Interface BinaryTreeFace :
+ - T root() : không truyền vào gì và trả ra gốc của cây
+ - int size() : trả về size của cây nghĩa là số node hoặc số phần tử khác null
+ - boolean isEmpty() : kiểm tra xem có phần tử trông không
+ - int numChildren(T p) : trả số số phần tử con của cha p ,với đối số truyền vào là 1 cha
+ - T parent(T p) ,T left(T p) , T right(T p);  : trả ra cha của p ,trả ra
+con trái của p ,trả ra con phải của p
+ -  T sibling(T p) : trả ra hàng xóm của p
+
+Về class ArrayBinaryTree :
+    - Khai báo 1 mảng để lưu phần tử của cây kiểu E ,1 biến n là size của cây
+    - T root() : trả ra phần tử của mảng ở vị trí thứ 1
+    - T parent(T p) : nhận vào 1 index là p ,tìm phần tử cha của nó là phần tử array[index % 2]
+    - T left(T p) : nhận vào 1 index là p ,tìm phần tử left của nó là phần tử array[2 * index]
+    - T left(T p) : nhận vào 1 index là p ,tìm phần tử right của nó là phần tử array[2 * index + 1]
+    - T sibling(T p) : nhận vào 1 index là p ,tìm hàng xóm nó với thuật toán :
+    + Nếu p % 2 == 0 nghĩa là nó đang ở cây con trái ,thì ta cần đưa ra cây con phải là array[index + 1]
+    + Ngược lại thì nó là cây con phải trả về array[index - 1]
+    - int numChildren(T p) : nhận vào 1 index là p ,trả ra số con của p :
+    + ta dùng hàm left(p) và right(p) để kiểm tra xem có con không nếu có thì cộng
+    - void setLeft(int p, E element) : hàm này nhận vào 1 index là p và phần tử là element
+    + Dùng đêr thay đổi giá trị của nút con trái của p bằng phần tử element
+    + Nếu 2 * p >= array.length thì tràn mảng ta cần cấp thêm length cho mảng cách cách tạo mảng mới
+    - void setRight(int p ,E element) :tương tự
+    -setRoot(E element) : sửa giá trị của gốc
+
+Về class LinkedBinaryTree<E ,T> :
+    - 
