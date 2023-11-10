@@ -1,4 +1,7 @@
-package hw6_21000710_chuquoctuan.ex2;
+package hw6_21000710_chuquoctuan.ex3;
+
+import hw6_21000710_chuquoctuan.ex2.Entry;
+import hw6_21000710_chuquoctuan.ex2.SortedArrayPriorityQueue;
 
 import java.util.Arrays;
 
@@ -78,7 +81,7 @@ public class MinHeapPriorityQueue<K extends Comparable ,E> extends SortedArrayPr
      }
 
      @Override
-     public void insert(Entry<K, E> entry) {
+     public void insert(hw6_21000710_chuquoctuan.ex2.Entry<K, E> entry) {
           if(isEmpty()){
                heapPQ[1] = (ArrEntry<K ,E>) entry;
                n++;
@@ -98,7 +101,7 @@ public class MinHeapPriorityQueue<K extends Comparable ,E> extends SortedArrayPr
      }
 
      @Override
-     public Entry<K, E> removeMin() {
+     public hw6_21000710_chuquoctuan.ex2.Entry<K, E> removeMin() {
           if (isEmpty()) {
                return null;
           }
