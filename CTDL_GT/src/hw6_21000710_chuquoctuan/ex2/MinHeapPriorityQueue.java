@@ -25,7 +25,6 @@ public class MinHeapPriorityQueue<K extends Comparable ,E> extends SortedArrayPr
      }
      protected void downHeap(){
           heapPQ[1] = heapPQ[n];
-          n--;
           int i = 1;
           while(i < n){
                if(2*i + 1 < n){
@@ -104,11 +103,11 @@ public class MinHeapPriorityQueue<K extends Comparable ,E> extends SortedArrayPr
           }
 
           ArrEntry<K, E> min = heapPQ[1];
-          n--;
 
           if (n > 0) {
                heapPQ[1] = heapPQ[n];
                downHeap();
+               n--;
           }
 
           return min;

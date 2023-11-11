@@ -14,13 +14,16 @@ public class TestEx2 {
         minHeap.insert(10 ,"H");
         minHeap.insert(11 ,"J");
 
-        minHeap.print();
-        minHeap.upHeap();
-        minHeap.print();
+        System.out.println("Heap before remove min : ");
 
-        minHeap.downHeap();
         minHeap.print();
 
+        Entry<Integer ,String> min = minHeap.removeMin();
 
+        System.out.println("Remove min : (" + min.getKey() + min.getValue() +")");
+        System.out.println("Heap after remove min : ");
+
+
+        minHeap.print();
     }
 }

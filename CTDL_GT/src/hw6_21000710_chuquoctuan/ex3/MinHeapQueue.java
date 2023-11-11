@@ -1,15 +1,13 @@
 package hw6_21000710_chuquoctuan.ex3;
 
-import hw6_21000710_chuquoctuan.ex2.Entry;
-import hw6_21000710_chuquoctuan.ex2.SortedArrayPriorityQueue;
 
 import java.util.Arrays;
 
-public class MinHeapPriorityQueue<K extends Comparable ,E> extends SortedArrayPriorityQueue<K, E> {
+public class MinHeapQueue<K extends Comparable ,E> extends SortedArrayPriorityQueue<K, E> {
      private ArrEntry<K ,E>[] heapPQ;
      private int n ;
 
-     public MinHeapPriorityQueue() {
+     public MinHeapQueue() {
           this.heapPQ = (ArrEntry<K, E>[]) new ArrEntry[10];
           this.n = 0;
      }
@@ -28,7 +26,6 @@ public class MinHeapPriorityQueue<K extends Comparable ,E> extends SortedArrayPr
      }
      protected void downHeap(){
           heapPQ[1] = heapPQ[n];
-          n--;
           int i = 1;
           while(i < n){
                if(2*i + 1 < n){
@@ -54,17 +51,13 @@ public class MinHeapPriorityQueue<K extends Comparable ,E> extends SortedArrayPr
                }
           }
      }
-//     private void swap(ArrEntry<K ,E> key1 ,ArrEntry<K ,E> key2){
-//          ArrEntry<K ,E> temp = key1;
-//          key1 = key2;
-//          key2 = temp;
-//     }
-     public void print(){
-          for (int i = 1; i <= n ; i++) {
-               if(i == n){
-                    System.out.print(heapPQ[i].getKey() + " : " + heapPQ[i].getValue());
+
+     public void print( ArrEntry<K ,E>[] array){
+          for (int i = 0; i < array.length ; i++) {
+               if(i == array.length - 1){
+                    System.out.print(array[i].getKey() + " : " + array[i].getValue());
                }else{
-                    System.out.print(heapPQ[i].getKey() + " : " + heapPQ[i].getValue() + " , ");
+                    System.out.print(array[i].getKey() + " : " + array[i].getValue() + " , ");
                }
           }
           System.out.println();
@@ -81,7 +74,7 @@ public class MinHeapPriorityQueue<K extends Comparable ,E> extends SortedArrayPr
      }
 
      @Override
-     public void insert(hw6_21000710_chuquoctuan.ex2.Entry<K, E> entry) {
+     public void insert(Entry<K, E> entry) {
           if(isEmpty()){
                heapPQ[1] = (ArrEntry<K ,E>) entry;
                n++;
@@ -91,7 +84,7 @@ public class MinHeapPriorityQueue<K extends Comparable ,E> extends SortedArrayPr
                heapPQ = Arrays.copyOf(heapPQ, heapPQ.length * 2);
           }
           n++;
-          heapPQ[n ] = (ArrEntry<K, E>) entry;
+          heapPQ[n] = (ArrEntry<K, E>) entry;
           upHeap();
      }
 
@@ -101,17 +94,17 @@ public class MinHeapPriorityQueue<K extends Comparable ,E> extends SortedArrayPr
      }
 
      @Override
-     public hw6_21000710_chuquoctuan.ex2.Entry<K, E> removeMin() {
+     public Entry<K, E> removeMin() {
           if (isEmpty()) {
                return null;
           }
 
           ArrEntry<K, E> min = heapPQ[1];
-          n--;
 
           if (n > 0) {
                heapPQ[1] = heapPQ[n];
                downHeap();
+               n--;
           }
 
           return min;
@@ -121,4 +114,13 @@ public class MinHeapPriorityQueue<K extends Comparable ,E> extends SortedArrayPr
      public Entry<K, E> min() {
           return heapPQ[1];
      }
+     public ArrEntry<K ,E>[] copyArray(){
+          ArrEntry<K ,E>[] copy = new ArrEntry[n];
+          for (int i = 0; i < n; i++) {
+               copy[i] = heapPQ[i + 1];
+          }
+          return copy;
+     }
+
+
 }
