@@ -1,0 +1,30 @@
+ExpressionTree :
+    - preorderPrint(Node<E> p) : duyệt theo kiểu Node-Left-Right
+        + nhận vàp node p
+        + Nếu p là null thì ta dừng đệ quy
+        + System.out.print(p.element + " ") in ra phần tử hiện tại của node
+        + preorderPrint(p.getLeft()) ta gọi đệ quy duyệt nút con trái của p
+        + preorderPrint(p.getRight()) ta gọi đệ quy duyệt nút con phải của p
+
+    - postorderPrint(Node<E> p) : duyệt theo kiểu Left-Right-Node
+        + nhận vàp node p
+        + Nếu p là null thì ta dừng đệ quy
+        + preorderPrint(p.getLeft()) ta gọi đệ quy duyệt nút con trái của p
+        + preorderPrint(p.getRight()) ta gọi đệ quy duyệt nút con phải của p
+        + System.out.print(p.element + " ") in ra phần tử hiện tại của node
+
+    - inorderPrint(Node<E> p) : duyệt theo kiểu Left-Node-Right
+        + nhận vàp node p
+        + Nếu p là null thì ta dừng đệ quy
+        + preorderPrint(p.getLeft()) ta gọi đệ quy duyệt nút con trái của p
+        + System.out.print(p.element + " ") in ra phần tử hiện tại của node
+        + preorderPrint(p.getRight()) ta gọi đệ quy duyệt nút con phải của p
+
+    - infixPrint(Node<E> p) :in ra trung tố
+    + kiểm tra xem node trái của node hiện tại mà khacs null thì ta in "(" và gọi đệ quy infixPrint(p.getLeft())
+    + nếu là null thì in ra giá trị hiện tại của node
+    + kiểm tra xem node phải của node hiện tại mà khacs null gọi đệ quy infixPrint(p.getRight()) rồi hết phần tử nào ở left nữa thì ta in ")"
+
+    - calculate(Node<E> p) :
+    + ta duyệt theo kiểu post order
+    + ta duyệt lá trái trước nếu là null thì trả ra giá trị neeus khôgn phải thì ta duyệt theo post order để ra các toán tử và toán hạng để tính
