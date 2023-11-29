@@ -1,1 +1,9 @@
 Binary tree use array : 
+  10
+1
+  20
+Binary tree use linked list : 
+  10
+1
+  20
+    30

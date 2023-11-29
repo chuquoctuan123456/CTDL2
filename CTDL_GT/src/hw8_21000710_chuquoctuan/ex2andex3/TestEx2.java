@@ -1,4 +1,4 @@
-package hw8_21000710_chuquoctuan.ex2;
+package hw8_21000710_chuquoctuan.ex2andex3;
 
 
 public class TestEx2 {

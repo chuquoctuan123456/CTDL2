@@ -1,4 +1,4 @@
-package hw7_21000710_chuquoctuan.ex1;
+package hw7_21000710_chuquoctuan.ex1.array;
 
 public class SearchArray<T extends Comparable> {
     public boolean searchNoSorted(T[] array ,T key){

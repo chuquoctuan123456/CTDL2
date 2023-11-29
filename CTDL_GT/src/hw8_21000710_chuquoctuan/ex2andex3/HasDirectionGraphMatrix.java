@@ -1,9 +1,4 @@
-package hw8_21000710_chuquoctuan.ex2;
-
-import hw8_21000710_chuquoctuan.ex1.GraphNoHasDirection;
-
-import java.util.ArrayList;
-import java.util.List;
+package hw8_21000710_chuquoctuan.ex2andex3;
 
 public class HasDirectionGraphMatrix implements GraphHasDirection{
     private int[][] matrixGraph;

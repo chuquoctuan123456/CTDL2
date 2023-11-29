@@ -1,4 +1,4 @@
-package hw8_21000710_chuquoctuan.ex1;
+package hw8_21000710_chuquoctuan.ex1andex3;
 
 public interface GraphNoHasDirection {
     public class Edge {
